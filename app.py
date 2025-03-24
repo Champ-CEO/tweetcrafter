@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import os
+import subprocess
 
 from tweetcrafter.agents import (
     editor_agent,
@@ -62,3 +63,6 @@ print("="*80)
 
 print("\nUsage Metrics:")
 print(workflow.usage_metrics)
+
+# Save the tweet to a clean markdown file using the standalone script
+subprocess.run(["python", "create_tweet_file.py"], check=True)
