@@ -27,12 +27,39 @@ poetry run python -m ipykernel install --user --name tweetcrafter --display-name
 
 ## Add API keys
 
-Create a `.env` file in the root of the project and add your Groq and/or OpenAI API keys:
+Create a `.env` file in the root of the project and add your API keys:
 
 ```sh
-GROQ_API_KEY=<GROQ_API_KEY>
-OPENAI_API_KEY=<OPENAI_API_KEY>
+# LlamaCloud API Key
+LLAMA_CLOUD_API_KEY=your_llama_cloud_api_key_here
+
+# Firecrawl API Key
+FIRECRAWL_API_KEY=your_firecrawl_api_key_here
+
+# Groq API Key
+GROQ_API_KEY=your_groq_api_key_here
+
+# SambaNova API Key
+SAMBANOVA_API_KEY=your_sambanova_api_key_here
 ```
+
+You can also copy the `.env.example` file and fill in your API keys.
+
+## Hybrid Model System
+
+TweetCrafter now uses a hybrid model system that combines Groq and SambaNova models for optimal performance and cost efficiency:
+
+1. **Dynamic Complexity Routing**: Automatically routes queries to the appropriate model based on complexity:
+   - Simple queries go to Groq's llama3-8b model (faster, cheaper)
+   - Complex queries go to SambaNova's deepseek-r1 model (more powerful)
+
+2. **Token Optimization**: Compresses prompts and truncates outputs to optimize token usage and costs.
+
+3. **Hybrid Validation Workflow**: Uses a two-step process for tweet generation:
+   - Initial drafts created with Groq
+   - Quality validation and refinement with SambaNova when needed
+
+This system ensures high-quality outputs while managing costs effectively.
 
 ## Usage
 
@@ -40,11 +67,12 @@ Go to `app.py` and change the inputs:
 
 ```py
 inputs = {
-    "topic": "Summary of the key new features of Phi-3",
+    "topic": "The latest developments in AI coding assistants",
     "urls": [
-        "https://huggingface.co/microsoft/Phi-3-vision-128k-instruct",
+        "https://github.blog/2023-11-08-universe-2023-copilot-transforms-into-an-ai-powered-developer-experience/",
+        "https://www.anthropic.com/news/claude-3-family"
     ],
-    "suggestion": "Focus on the performance and how-to use the model.",
+    "suggestion": "Include comparison between main players and highlight innovative features.",
 }
 ```
 
@@ -71,10 +99,10 @@ poetry run python app.py
 
 ```py
 {
-   "total_tokens":12334,
-   "prompt_tokens":10260,
-   "completion_tokens":2074,
-   "successful_requests":8
+   "total_tokens": 3000,
+   "prompt_tokens": 2000,
+   "completion_tokens": 1000,
+   "successful_requests": 3
 }
 ```
 
@@ -84,7 +112,7 @@ The tweets I got from the crew (saved to `output/tweet.md`):
 
 ```md
 Original Tweet:
-"Meet Phi-3, the cutting-edge AI model revolutionizing NLP! 🚀💻
+"Meet Phi-3, the cutting-edge AI model revolutionizing NLP! 
 • Processes human language efficiently and accurately
 • Ideal for NLP, text gen, conversational AI, sentiment analysis, and language translation
 • Transparent, accountable, and fair decision-making
@@ -92,7 +120,7 @@ Original Tweet:
 #Phi3 #AI #NLP #LanguageModel #ResponsibleAI
 
 Version 1:
-"Unlock the power of Phi-3, the AI model that's changing the NLP game! 🚀💻
+"Unlock the power of Phi-3, the AI model that's changing the NLP game! 
 • Efficient and accurate language processing
 • Perfect for text gen, conversational AI, sentiment analysis, and language translation
 • Transparency, accountability, and fairness in decision-making
@@ -100,7 +128,7 @@ Version 1:
 #Phi3 #AI #NLP #LanguageModel #ResponsibleAI
 
 Version 2:
-"Take your NLP projects to the next level with Phi-3! 🚀💻
+"Take your NLP projects to the next level with Phi-3! 
 • Fast and accurate language processing
 • Ideal for conversational AI, sentiment analysis, and language translation
 • Built with transparency, accountability, and fairness in mind
@@ -108,7 +136,7 @@ Version 2:
 #Phi3 #AI #NLP #LanguageModel #ResponsibleAI
 
 Version 3:
-"Discover the future of NLP with Phi-3! 🚀💻
+"Discover the future of NLP with Phi-3! 
 • Efficient language processing for text gen, conversational AI, and more
 • Transparent, accountable, and fair decision-making
 • Trained on diverse datasets and compatible with TensorFlow and PyTorch
