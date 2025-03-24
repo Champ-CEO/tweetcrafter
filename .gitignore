@@ -4,3 +4,4 @@ __pycache__
 logs/
 data/tweets.md
 output/
+.qodo
