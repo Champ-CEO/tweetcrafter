@@ -1230,27 +1230,6 @@ files = [
 ]
 
 [[package]]
-name = "duckduckgo-search"
-version = "6.1.2"
-description = "Search for words, documents, images, news, maps and text translation using the DuckDuckGo.com search engine."
-optional = false
-python-versions = ">=3.8"
-groups = ["main"]
-files = [
-    {file = "duckduckgo_search-6.1.2-py3-none-any.whl", hash = "sha256:74b04a4c7e0803c1b93ea51dcfdc92fce26d60757c76ba897ed0c424297d27f2"},
-    {file = "duckduckgo_search-6.1.2.tar.gz", hash = "sha256:4250c937db9b9c6831e6960455c7fc6cc86825764b0020c0edd2c302db5bc2f7"},
-]
-
-[package.dependencies]
-click = ">=8.1.7"
-orjson = ">=3.10.3"
-pyreqwest-impersonate = ">=0.4.6"
-
-[package.extras]
-dev = ["mypy (>=1.10.0)", "pytest (>=8.2.0)", "pytest-asyncio (>=0.23.6)", "ruff (>=0.4.4)"]
-lxml = ["lxml (>=5.2.2)"]
-
-[[package]]
 name = "embedchain"
 version = "0.1.102"
 description = "Simplest open source retrieval (RAG) framework"
@@ -4687,27 +4666,6 @@ files = [
 ]
 
 [[package]]
-name = "pyreqwest-impersonate"
-version = "0.4.6"
-description = "HTTP client that can impersonate web browsers, mimicking their headers and `TLS/JA3/JA4/HTTP2` fingerprints"
-optional = false
-python-versions = ">=3.8"
-groups = ["main"]
-files = [
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-macosx_10_12_x86_64.whl", hash = "sha256:0755ee732bc3d5cd4f3cf1934d0c202db684fe1046b80ab210b75aebd9d10f6d"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:3d5329b1201567f8634cbb14ec7d5a4dcdffe49bd89bf4219e444c3552fdb916"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:d2ea395fc054d5ce77635d643524daf142f9784451cb9912c9f258678ef1cfc7"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:fc7df5cc52ccdc1f7f6a679208f3bbb4cadeb95d64152f8fc1a701f687d1318d"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:fa92e5c651dfaca87b51b3bbc552a22c1ec749dc01652bf0a7a0e17dc63f9890"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:5f2789bc73ad8a32ae59408501b07003a135be04476ab1eda5dbfffe98533d61"},
-    {file = "pyreqwest_impersonate-0.4.6-cp38-abi3-win_amd64.whl", hash = "sha256:bbdceb613991aeb8dccbb887035becc8999e63a99ad11ef2f472c763a9d9a0e6"},
-    {file = "pyreqwest_impersonate-0.4.6.tar.gz", hash = "sha256:0d9d97c2f953b200c35ea77cf0fc6537df9e9210d22344b7caa8e8026343af85"},
-]
-
-[package.extras]
-dev = ["pytest (>=8.1.1)"]
-
-[[package]]
 name = "pyright"
 version = "1.1.364"
 description = "Command line wrapper for pyright"
@@ -6751,4 +6709,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<=3.13"
-content-hash = "5733edbfea9b86d8f5bf509baaf4f3fc86e290922785a3bbce1e9cd88134efb8"
+content-hash = "f7cc5fcfcd715049a10c118b8063676dcd71bc2682e194e71c2749fddab27fb3"

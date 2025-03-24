@@ -17,3 +17,5 @@ class Config:
         AGENT_LOGS_DIR = LOGS_DIR / "agents"
 
     MODEL = Model.LLAMA_3
+    LLAMA_CLOUD_API_KEY = os.getenv("LLAMA_CLOUD_API_KEY", "")
+    FIRECRAWL_API_KEY = os.getenv("FIRECRAWL_API_KEY", "")
